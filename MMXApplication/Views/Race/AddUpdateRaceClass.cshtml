@@ -1,0 +1,51 @@
+﻿@model MMXModelsLib.RaceClassModel
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("AddUpdateRaceClass", "Race", FormMethod.Post)) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Class: <span>@Model.ClassName</span></legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClassName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ClassName)
+            @Html.ValidationMessageFor(model => model.ClassName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MinimumAge)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MinimumAge)
+            @Html.ValidationMessageFor(model => model.MinimumAge)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Note)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Note)
+            @Html.ValidationMessageFor(model => model.Note)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Enabled)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Enabled)
+        </div>
+        <div>
+            @Html.HiddenFor(model => model.RaceClassKey)
+        </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+<div>
+    @*@if (Model.ShowingAll) {*@
+        @Html.ActionLink("Back", "ShowActiveRaceClasses")
+@*    } else {
+        @Html.ActionLink("Back", "RaceClassList")
+    }
+*@
+</div>

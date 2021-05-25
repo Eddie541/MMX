@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MMXModelsLib.MemberDisplayModel>
+@using MMXApplication.Views
+@{
+    Layout = null;
+}
+<table>
+    <tr>
+         <th>
+             @if ((bool)ViewData["IsAdmin"]) {  
+                    @Html.ActionLink("Add New", "AddUpdateMember", new { MemberKey = 0 })
+                }
+            </th>
+        <th>
+            First
+        </th>
+        <th>
+            Last 
+        </th>
+        <th>
+            Classes
+        </th>
+    </tr>
+    @foreach (var item in Model) {
+        <tr>
+        <td>
+             @if ((bool)ViewData["IsAdmin"]) {  
+                    @Html.ActionLink("Update", "AddUpdateMember", new { MemberKey = item.MemberKey })
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>  
+               @Html.DisplayFor(modelItem => item.Classes)        
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>*@
+        </tr>
+    }
+</table>

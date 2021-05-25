@@ -1,0 +1,63 @@
+﻿@model MMXModelsLib.MemberRaceResultEntryModel
+<table>
+    <tr>
+        <td>
+            <input type="submit" name="rowBtn" value="Save" />
+            @Html.HiddenFor(m => m.RaceClassMemberKey)
+            @Html.HiddenFor(m => m.RaceResultKey)
+            @Html.HiddenFor(m => m.RaceKey)
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(m => m.FirstName)
+        </td>
+        <td>
+            @if (Model.EnterData) {
+                @Html.TextBoxFor(m => m.Brand)
+            } else {
+                @Html.DisplayFor(m => m.Brand)
+            }
+        </td>
+        <td>
+            @if (Model.EnterData) {
+                @Html.TextBoxFor(m => m.RidingNumber)
+            } else {
+                @Html.DisplayFor(m => m.RidingNumber)
+            }
+        </td>
+        <td>
+            @if (Model.EnterData) {
+                @Html.TextBoxFor(m => m.MotoOnePosition)
+                @Html.DropDownListFor(m => m.StatusMotoOne, new SelectList(Model.FinishSelections, "Finish", "Finish"))
+            } else {
+                @Html.DisplayFor(m => m.MotoOnePosition)
+                @Html.DisplayFor(m => m.StatusMotoOne)
+            }
+        </td>
+        <td>
+            @if (Model.EnterData) {
+                @Html.TextBoxFor(m => m.MotoTwoPosition)
+                @Html.DropDownListFor(m => m.StatusMotoTwo, new SelectList(Model.FinishSelections, "Finish", "Finish"))
+            } else {
+                @Html.DisplayFor(m => m.MotoTwoPosition)
+                @Html.DisplayFor(m => m.StatusMotoTwo)
+            }
+        </td>
+        <td>
+            @if (Model.EnterData) {
+                @Html.TextBoxFor(m => m.Overall)
+            } else {
+                @Html.DisplayFor(m => m.Overall)
+            }
+        </td>
+        <td>
+            @if (Model.EnterData) {
+                @Html.TextAreaFor(m => m.Note)
+            } else {
+                @Html.DisplayFor(m => m.Note)
+            }
+        </td>
+    </tr>
+</table>

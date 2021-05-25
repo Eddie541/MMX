@@ -1,0 +1,97 @@
+﻿@model MMXModelsLib.MemberModel
+@{
+    ViewBag.Title = "My Account";
+}
+<h2>
+    My Contact Information</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="accountdiv">        
+        <div class="aligned-display-field">
+            <span>User:</span>
+            @Html.DisplayFor(model => model.FirstName)
+        </div>
+        <div class="aligned-display-field">
+            <span>Email:</span>
+            @Html.DisplayFor(model => model.Email)</div>
+        <div class="aligned-display-field">
+            <span>Last Activity:</span>
+            @Html.DisplayFor(model => model.LastActivity, "DisplayDateTime")</div>
+        <div class="aligned-display-field">
+            <span>Last Login:</span>
+            @Html.DisplayFor(model => model.LastLoginDate, "DisplayDateTime")</div>
+        <div class="aligned-display-field">
+            <span>Last Password Change:</span>
+            @Html.DisplayFor(model => model.LastPasswordChangeDate, "DisplayDateTime")</div>
+        <div>
+            @Html.ActionLink("Change Password", "ChangePassword", "Account")
+        </div>
+        <div>
+            @Html.ActionLink("Change Email", "ChangeEmail", "Account")
+        </div>
+       
+    </div>   
+    <div class="accountdiv">
+        <div class="aligned-display-field">
+            <span>First Name:</span>
+            @Html.DisplayFor(model => model.FirstName)
+        </div>
+        <div class="aligned-display-field">
+            <span>Middle Name:</span>
+            @Html.DisplayFor(model => model.MiddleName)
+        </div>
+        <div class="aligned-display-field">
+            <span>Last Name:</span>
+            @Html.DisplayFor(model => model.LastName)
+        </div>
+         <div class="aligned-display-field">
+            <span>Suffix:</span>
+            @Html.DisplayFor(model => model.Suffix)
+        </div>
+        <div class="aligned-display-field">
+            <span>Phone:</span>
+            @Html.DisplayFor(model => model.Phone)
+        </div>
+        <div class="aligned-display-field">
+            <span>AMA/License Number:</span>
+            @Html.DisplayFor(model => model.LicenseNumber)
+        </div>
+        <div class="aligned-display-field">
+            <span>DOB:</span>
+            @Html.DisplayFor(model => model.DateOfBirth)
+        </div>
+    </div>
+    <div class="accountdiv">
+        <div class="aligned-display-field">
+            <span>Street Address:</span>
+            @Html.DisplayFor(model => model.Address.StreetAddress1)
+        </div>
+        <div class="aligned-display-field">
+            <span>Address (cont.):</span>
+            @Html.DisplayFor(model => model.Address.StreetAddress2)
+        </div>
+        <div class="aligned-display-field">
+            <span>City:</span>
+            @Html.DisplayFor(model => model.Address.City)
+        </div>
+        <div class="aligned-display-field">
+            <span>State:</span>
+            @Html.DisplayFor(model => model.Address.State)
+        </div>
+        <div class="aligned-display-field">
+            <span>Zip Code:</span>
+            @Html.DisplayFor(model => model.Address.ZipCode)
+        </div>
+        <div>
+            @Html.HiddenFor(model => model.MemberKey)
+            @Html.HiddenFor(model => model.AddressKey)
+            @Html.HiddenFor(model => model.MemberKey)
+        </div>
+        <div>
+            @if (Model.IsAdminRole) {           
+                @Html.ActionLink("Add Update Member Information", "AddUpdateMember", "Member")            
+            }
+        </div>        
+    </div>
+                   
+}

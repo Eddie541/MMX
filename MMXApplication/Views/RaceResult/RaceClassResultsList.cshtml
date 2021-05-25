@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MMXModelsLib.RaceClassMemberResultModel>
+<table>
+    <tr>
+        <th>
+            <div>
+                First
+            </div>          
+        </th>
+        <th>
+            <div>
+                Last</div>
+        </th>
+        <th>
+            Brand
+        </th>
+        <th>
+            Num#
+        </th>
+        <th>
+            Moto 1
+        </th>
+        <th>
+            Moto 2
+        </th>
+        <th>
+            Points
+        </th>
+        @*<th>
+            Overall
+        </th>*@
+    </tr>
+    @foreach (var item in Model) {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.RidingNumber)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.MotoOnePosition)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.MotoTwoPosition)
+            </td>
+            <td>@Html.DisplayFor(modelItem => item.Points)
+            
+            @* <td> @Html.DisplayFor(modelItem => item.Overall)  </td>
+               *@
+                @Html.HiddenFor(modelItem => item.RaceClassMemberKey)
+                @Html.HiddenFor(modelItem => item.RaceResultKey)
+                @Html.HiddenFor(modelItem => item.RaceKey)
+                @Html.HiddenFor(modelItem => item.MemberKey)
+            </td>
+        </tr>
+    }
+</table>

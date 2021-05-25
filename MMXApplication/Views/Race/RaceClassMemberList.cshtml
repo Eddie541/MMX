@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MMXModelsLib.RaceClassMemberModel>
+<table>
+    <tr>
+        <th>
+            First
+        </th>
+        <th>
+            Last
+        </th>
+        <th>
+            Points
+        </th>
+        <th>
+            Dropped
+        </th>
+        <th>
+            Total Points
+        </th>
+        <th>
+            @if ((bool)ViewData["IsAdmin"]) {                
+                @Html.Display("Has Paid");
+            }
+        </th>
+    </tr>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PointsTotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PointsDropped)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdjustedPointsTotal)
+            </td>
+            <td>
+                @if ((bool)ViewData["IsAdmin"]) {
+                    @Html.DisplayFor(modelItem => item.HasPaid)
+                }
+                @Html.HiddenFor(modelItem => item.RaceClassKey)
+                @Html.HiddenFor(modelItem => item.RaceClassMemberKey)
+            </td>
+        </tr>
+    }
+</table>

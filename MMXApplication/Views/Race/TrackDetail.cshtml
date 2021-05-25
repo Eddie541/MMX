@@ -1,0 +1,56 @@
+﻿@model MMXModelsLib.TrackModel
+@*<fieldset>
+    <legend>Track Details</legend>*@
+    <div class="accountdiv">
+        <div class="aligned-display-fieldd">
+            <span>Track:</span>
+            @Html.DisplayFor(model => model.TrackName)
+        </div>
+        <div class="aligned-display-field">
+            <span>Contact:</span>
+            @Html.DisplayFor(model => model.ContactName)
+        </div>
+        <div class="aligned-display-field">
+            <span>Phone:</span>
+            @Html.DisplayFor(model => model.Phone)
+        </div>
+        <div class="aligned-display-field">
+            <span>Web:</span>
+            @Html.DisplayFor(model => model.WebAddress)
+        </div>
+        <div class="aligned-display-field">
+            <span>Email:</span>
+            @Html.DisplayFor(model => model.EmailAddress)
+        </div>
+    </div>
+    <div class="accountdiv">
+        <div class="aligned-aligned-display-field">
+            <span>Street Address:</span>
+            @Html.DisplayFor(model => model.Address.StreetAddress1)
+        </div>
+        <div class="aligned-aligned-display-field">
+            <span>Address (cont.):</span>
+            @Html.DisplayFor(model => model.Address.StreetAddress2)
+        </div>
+        <div class="aligned-aligned-display-field">
+            <span>City:</span>
+            @Html.DisplayFor(model => model.Address.City)
+        </div>
+        <div class="aligned-aligned-display-field">
+            <span>State:</span>
+            @Html.DisplayFor(model => model.Address.State)
+        </div>
+        <div class="aligned-aligned-display-field">
+            <span>Zip Code:</span>
+            @Html.DisplayFor(model => model.Address.ZipCode)
+        </div>
+        <div class="aligned-aligned-display-field">
+            <span>Latitude:</span>
+            @Html.DisplayFor(model => model.Address.Latitude)
+        </div>
+        <div class="aligned-aligned-display-field">
+            <span>Longitude:</span>
+            @Html.DisplayFor(model => model.Address.Longitude)
+        </div>
+    </div>
+@*</fieldset>*@

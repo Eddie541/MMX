@@ -1,0 +1,13 @@
+﻿@model MMXModelsLib.UploadRaceResultsViewModel
+@{
+    ViewBag.Title = "File Upload";
+}
+<div>
+    <div>
+        <a href="@Url.Action("SelectRaceResultUpload", "RaceResult", new { @year = 0, @raceKey = 0 })" id="showAnotherYearAndRacesActionLink">
+            Select Another Race</a>
+    </div>
+    <div id="selectedraceuploaddiv">
+        @Html.Partial("SelectedRaceUpload", Model.SelectedRaceModel)
+    </div>
+</div>

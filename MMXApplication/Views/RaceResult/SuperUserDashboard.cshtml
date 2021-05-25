@@ -1,0 +1,47 @@
+﻿@model MMXModelsLib.SuperUserDashboardModel
+@{
+    Layout = null;
+}
+<div class="divborder" id="superuserdashboarddiv">
+    
+        <h3>Super User Controls</h3>
+        <div>
+            <h2>
+                <span>Current Enrollment Year:</span> @Model.Enrollment.EnrollmentYear</h2>
+        </div>
+        <div>
+            @{
+                Html.RenderPartial("UploadResultFile", Model.FileUpload);
+            }
+        </div>
+        <div>
+            @* @if (Model.Enrollment.EnrollmentOpen) {
+     Html.ActionLink("Close Enrollment", "CloseEnrollment", "RaceResult");
+ } else {  // todo or just do it on eoy
+     Html.ActionLink("Open Next Year's Enrollment", "OpenEnrollment", "RaceResult");
+ }
+*@
+        </div>
+        <div class="entryelementdiv;">
+            <div class="alignedentrydiv">
+                @Html.LabelFor(model => model.Enrollment.EnrollmentOpen, "Enrollment Open")
+                @Html.CheckBoxFor(model => model.Enrollment.EnrollmentOpen, new { @disabled = "disabled", @readonly = "readonly" })
+            </div>
+        </div>
+        <div class="entryelementdiv;">
+            <div class="alignedentrydiv">
+                @Html.LabelFor(model => model.Enrollment.DropPoints, "Points Dropped")
+                @Html.CheckBoxFor(model => model.Enrollment.DropPoints, new { @disabled = "disabled", @readonly = "readonly" })
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Drop Points", "SetPointsDrop", "RaceResult")
+            @*     @if (Model.Enrollment.DropPoints == false) {
+     }
+*@
+        </div>
+    <div id="selectRaceResultUploadDiv" style="background-color: #F5F5F5;">
+    </div>
+    <div id="fileUploadingDiv" style="background-color: #F5F5F5;">
+    </div>
+</div>

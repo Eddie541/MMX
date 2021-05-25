@@ -1,0 +1,10 @@
+﻿@model MMXModelsLib.RaceSelectorModel
+<div>
+    <span>
+        <text>Select a Race:</text>
+        @if (Model.Races != null) {
+            @Html.DropDownListFor(m => m.RaceKey, new SelectList(Model.Races, "RaceKey", "RaceName"))
+        }
+        <input type="submit" value="Go" />
+    </span>
+</div>

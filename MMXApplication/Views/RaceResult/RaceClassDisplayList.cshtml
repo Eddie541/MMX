@@ -1,0 +1,17 @@
+﻿@model MMXModelsLib.RaceClassDisplayListModel
+<div>  
+    <table>
+        <tr>         
+            <th>
+                Race Classes
+            </th>
+        </tr>
+        @for (int t = 0; t < Model.RaceClassDisplayModels.Count(); t++) {            
+                Html.RenderPartial("CompletedRaceClass", Model.RaceClassDisplayModels[t]);
+        }
+    </table>
+    <div>
+        @Html.HiddenFor(model => model.RaceKey)        
+        @Html.HiddenFor(model => model.IsAdminRole)
+    </div>
+</div>

@@ -1,0 +1,55 @@
+﻿@model MMXModelsLib.RaceResultEntryModel
+@using MMXApplication.Views
+@{
+    Layout = null;
+}
+<div class="aligned-display-field">
+    <span>Race:</span>
+    @Html.DisplayFor(model => model.Race.RaceName)
+</div>
+<div class="aligned-display-field">
+    <span>Date:</span>
+    @Html.DisplayFor(model => model.Race.RaceDate)
+</div>
+<div class="aligned-display-field">
+    <span>Track:</span>
+    @Html.DisplayFor(model => model.Race.TrackName)
+</div>
+<table>
+    <tr>
+        <th>
+        </th>
+        <th>
+            Class
+        </th>
+        <th>
+            Minimum Age
+        </th>
+        <th>
+            Note
+        </th>
+    </tr>
+    @foreach (var item in Model.Classes) {
+        <tr>
+            <td>
+                @if (Model.IsAdminRole) {          
+                    @Html.ActionImage("AddUpdateRaceClassResults", new { raceKey = Model.Race.RaceKey, raceClassKey = item.RaceClassKey }, "../../Content/images/create16.png", "Enter Results")                  
+                }
+                @Html.HiddenFor(modelItem => item.RaceClassKey)
+                @Html.HiddenFor(modelItem => item.Enabled)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MinimumAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Note)
+            </td>
+        </tr>      
+    }
+</table>
+<div>
+    @Html.ActionLink("Back", "RaceResultsList")
+</div>

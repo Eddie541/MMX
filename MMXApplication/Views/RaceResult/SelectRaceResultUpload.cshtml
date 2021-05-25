@@ -1,0 +1,31 @@
+﻿@model MMXModelsLib.SelectRaceResultUploadModel
+<div>
+    @if (Model.SelectedRaceModel.CurrentYear > 0 && Model.SelectedRaceModel.RaceKey > 0) {
+        <div>
+            @Html.Partial("SelectedRaceUpload", Model.SelectedRaceModel);
+            <input type="button" value="OK" onclick="closeSelectDialog()" />
+        </div>
+
+    } else {   
+        <fieldset>
+            <legend>Select Race to Upload</legend>
+            <div>
+                <div id="yearSelectorDiv">
+                    <span>
+                        @if (Model.Years != null) {
+                            @Html.DropDownListFor(m => m.SelectedRaceModel.CurrentYear, new SelectList(Model.Years, "CurrentYear", "CurrentYear"))
+                        }
+                        <input id="yearbutton" type="button" value="Set Year" onclick="SetYear();" />
+                    </span>
+                </div>
+                <div id="raceSelectorDiv">
+                    <span>
+                        @if (Model.Races != null) {
+                            @Html.DropDownListFor(m => m.SelectedRaceModel.RaceKey, new SelectList(Model.Races, "RaceKey", "RaceName"))
+                        }
+                        <input id="raceButton" type="button" value="Set Race" onclick="SetRace()" /></span>
+                </div>
+            </div>
+        </fieldset>
+    }
+</div>

@@ -1,0 +1,32 @@
+﻿@model MMXModelsLib.RaceClassResultEntryModel
+@using MMXApplication.Views
+@{
+    Layout = null;   
+}
+
+<div>
+    <table>
+        <tr>
+            <th>@Model.Race.RaceName
+            </th>
+            <th>@Html.DisplayFor(m => m.Race.RaceDate)
+                @Html.HiddenFor(m => Model.Race.RaceKey)
+                @Html.HiddenFor(m => Model.RaceClass.RaceClassKey)
+            </th>
+        </tr>
+        <tr>
+            <th>@Model.RaceClass.ClassName
+            </th>
+            <th>
+                <span>@Html.DisplayFor(m => m.RaceClass.Members.Count) Members</span>
+            </th>
+        </tr>
+    </table>
+</div>
+@for (int i = 0; i < Model.MemberResultEntries.Count(); i++) {
+        Model.MemberResultEntries[i].EntryRow = i;
+        Html.RenderPartial("MemberRaceResultEntryForm", Model.MemberResultEntries[i]);
+    }
+<div>
+    @Html.ActionLink("Back", "RaceResultEntry", new { raceKey = Model.Race.RaceKey })
+</div>

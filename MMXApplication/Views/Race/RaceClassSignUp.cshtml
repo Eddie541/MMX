@@ -1,0 +1,27 @@
+﻿@model MMXModelsLib.RaceClassSignUpModel
+@{
+    Layout = null;
+}
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Html.DisplayFor(model => model.SelectedRaceClassModel.ClassName)</legend>
+        <div>
+            @Html.DropDownList("MotorcycleKey", new SelectList(Model.Motorcycles as System.Collections.IEnumerable, "MotorcycleKey", "Summary"))
+        </div>
+        <div>
+            @Html.HiddenFor(model => model.RaceClassKey)
+        </div>
+        <div>
+            @if (ViewData.ContainsKey("SignUpError")) {               
+                <span>@ViewData["SignUpError"]</span>
+            }
+        </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back", "ShowAllRaceClasses")
+</div>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MMXModelsLib.MotorcycleModel>
+@using MMXApplication.Views
+@{
+    Layout = null;
+}
+<p>
+    <span>Add New:
+        @Html.ActionImage("AddUpdateMotorcycle", new { motorcycleKey = 0 }, "../../Content/images/mmxOpen.png", "Add Motorcycle")
+    </span>
+</p>
+<table>
+    <tr>
+        <th>
+        </th>
+        <th>
+            Brand
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Displacement
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Riding Number
+        </th>
+    </tr>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.ActionImage("AddUpdateMotorcycle", new { motorcycleKey = item.MotorcycleKey }, "../../Content/images/unblocked16.png", "Update")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CycleModel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Displacement)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RidingNumber)
+                @Html.HiddenFor(modelItem => item.MotorcycleKey)
+                @Html.HiddenFor(modelItem => item.MemberKey)
+            </td>
+        </tr>
+    }
+</table>

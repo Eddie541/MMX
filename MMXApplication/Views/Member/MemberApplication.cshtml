@@ -1,0 +1,11 @@
+﻿@model MMXModelsLib.SuperUserDashboardModel
+@{
+    ViewBag.Title = "Member Application";
+}
+<h2>
+    Member Application</h2>
+<div style="width: 100%; height: 100%;">
+    <object data="@Url.Action("MemberApplicationPDF")" type="application/pdf" style="width:100%; height:100%;">
+        alt : <a href="../../App_Data/MMXData/mmx2014application.pdf">link</a>
+    </object>
+</div>

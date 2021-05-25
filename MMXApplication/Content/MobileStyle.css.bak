@@ -1,0 +1,373 @@
+﻿html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, 
+kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, 
+td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, 
+menu, nav, section, summary, time, mark, audio, video
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+html
+{
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body
+{
+    font-family: arial, helvetica sans-serif;
+    font-size: medium;
+    background-color: #F5F5F5;
+}
+
+#menu
+{
+    zoom: 1;    
+    padding: 0;
+    border-bottom: 1px #000000 solid;
+    position: relative;
+    margin: 0;
+}
+
+#menu:before, #menu:after
+{
+    content: "000000";
+    display: block;
+    height: 0;
+    overflow: hidden;
+}
+
+#menu:after
+{
+    clear: both;
+}
+
+#menu li
+{
+    display: inline;
+    float: left;
+    width: 16.66%;
+    list-style: none;   
+    
+} 
+
+/*#menu a:active
+{
+    background: #CCCCCC;    
+}*/
+
+#menu a
+{
+    color: #FFFFFF;
+    display: block;
+    margin: 0 0.22em 0 0.22em;
+    overflow: hidden;
+    padding-top: 0.328em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em; 
+    -moz-border-radius-topleft: 0.5em; 
+    -moz-border-radius-topright: 0.5em;
+    font-size:large;
+}
+
+#menu a.normaltab
+{
+    background:#193EAC;
+    border: 2px lightgray solid;
+}
+
+#menu a.activetab
+{
+    background:#CCCCCC;
+    border: 1px black solid;
+}
+
+ul#menu li a:hover
+{
+    background-color: #CAD0CA;
+    text-decoration: none;
+}
+
+ul#menu li a:active
+{
+    background-color: #CCCCCC; 
+    text-decoration: none;
+}
+
+ul#menu li.selected a
+{
+    background-color: #CCCCCC; 
+    color: #000;
+}
+
+/* #2 */
+ul#menu li a.selected
+{
+    background-color: #CCCCCC; 
+    color: #000;
+}
+
+
+/******************************/
+
+/* TABLE
+----------------------------------------------------------*/
+
+table 
+{
+  border: solid 1px #e8eef4;
+  border-collapse: collapse;
+}
+
+table td 
+{
+  padding: 5px;   
+  border: solid 1px #e8eef4;
+}
+
+table th
+{
+  padding: 6px 5px;
+  text-align: left;
+  background-color: #e8eef4; 
+  border: solid 1px #e8eef4;   
+  border-top-left-radius: 0.25em;
+  border-top-right-radius: 0.25em; 
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset 
+{
+    margin: 1em 0;
+    padding: 1em;
+    border: 1px solid #CCC;
+}
+
+fieldset p 
+{
+    margin: 0.125em 0.75em 0.625em 0.625em;
+}
+
+fieldset label 
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 0.125em 0.25em 0.5em 0.25em;
+}
+
+/*input[type="text"] 
+{
+   
+    border: 1px solid #CCC;
+}*/
+
+input[type="password"] 
+{    
+    border: 1px solid #CCC;
+}
+
+input[type="email"] 
+{    
+    border: 1px solid #CCC;
+    min-width: 20em;
+}
+
+/*#editor-field 
+{
+    float:right;
+    clear:right;   
+}
+
+#editor-label
+{
+    float:left;
+    clear:left;
+}*/
+
+.entryelementdiv 
+{    
+    display: inline; 
+    float: left; 
+    padding: 0.5em;
+}
+
+.alignedentrydiv 
+{
+    display:inline;
+    margin: 0.5em;
+    overflow:auto;
+   
+}
+
+.aligned-display-label 
+{
+    float: left; 
+    clear: left; 
+    padding: 0.375em 0.375em 0.375em 0.188em;
+    max-width: 9.5em;
+    min-width: 3.75em;
+    
+}
+
+.aligned-display-field 
+{
+    clear: right; 
+    padding: 0.375em;    
+    min-width: 15.625em;
+}
+
+.long-display-field 
+{
+    border-style: inset;  
+    /*width: 28.125em;*/
+}
+
+
+.mulitiline-field 
+{
+    border-style: inset;   
+    min-width: 15.625em;
+    
+}
+
+.centeredresultdiv 
+{
+  position:relative;   
+}
+
+
+/**************** specific elements **/
+
+.accountdiv 
+{
+   display:inline;
+   float: left;
+   width: 33.33%;  
+}
+
+.accountfieldset 
+{
+    height: 22em;
+    padding: 0.5em;
+    margin: 0.5em;
+}
+
+.errorformat 
+{
+    color: Red;
+    font-weight: bold;
+}
+
+.namecolumn 
+{
+    width:120px;
+    float:left;
+    
+}
+
+#logondiv    
+{    
+        
+    width:auto;  
+    margin: 0.5em;    
+    padding: 0.5em; 
+    vertical-align:top;    
+}     
+
+#header 
+{
+  background: #193EAC;   
+}
+
+#title 
+{
+    font: "Arial Black" , arial, sans serif;
+    font-size: xx-large;
+    font-style: italic;
+    color: #FFFFFF;
+    padding: 0.5em;
+    clear:right;
+}
+
+
+#logindisplay
+{
+    font-size: .9em;
+    display:block;
+    text-align:right;
+    margin:10px;
+    color: #FFFFFF;
+    clear: left;
+}
+
+#logindisplay a 
+{
+    color: #FF0000;    
+}
+
+
+
+/* Handheld CSS */
+
+@media only screen and (max-width: 480px)
+{
+    html, body
+    {
+        font: 12px/15px sans-serif;
+        background: #fff;
+        padding: 3px;
+        color: #000;
+        margin: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6
+    {
+        font-weight: normal;
+    }
+
+    .center
+    {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    #menu li
+    {
+        display: inline;
+        float: left;
+        width: 33.33%;    
+        list-style: none;    
+    }
+    
+    .accountdiv 
+    {
+        display: table;
+        float: left;
+        clear: left;
+    }
+        
+
+  
+}

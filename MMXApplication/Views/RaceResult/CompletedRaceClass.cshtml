@@ -1,0 +1,33 @@
+﻿@model MMXModelsLib.RaceClassDisplayModel   
+<tr id="@Html.Encode("classrow" + Model.RaceClassKey)">
+    <td>
+        <div>
+            <div style="display: inline-table;">
+                <div class="alignedentrydiv">
+                    <div class="alignedentrydiv">
+                        @{var classKey = Model.RaceClassKey;}
+                        @Ajax.ImageActionLink("../../Content/images/mmxOpen16.png", "Get Class Results", "GetRaceClassResults", new { raceKey = Model.RaceKey, raceClassKey = Model.RaceClassKey },
+                    new AjaxOptions() {
+                        HttpMethod = "GET",
+                        UpdateTargetId = "classresultdiv" + Model.RaceClassKey,
+                        InsertionMode = InsertionMode.Replace,
+                        OnSuccess = "postSuccess('" + classKey + "', 'raceResultLink', 'closeClassResults', 'classrow')",
+                        OnComplete = "postOnComplete()"
+                        
+                    }, new { @id = "raceResultLink" + Model.RaceClassKey })
+                        <input class="closebuttons" id="@Html.Encode("closeClassResults" + Model.RaceClassKey)" type="image" 
+                        alt="Close" src="../../Content/images/mmxClose16.png" 
+                        onclick="closeDisplayDiv('@Model.RaceClassKey', 'classresultdiv', 'raceResultLink', 'closeClassResults');" style="display:none;" />
+                        @Html.DisplayFor(model => model.ClassName)
+                        @Html.DisplayFor(model => model.Note)
+                        @Html.DisplayFor(model => model.Enabled)
+                        @Html.HiddenFor(model => model.RaceClassKey)
+                        @Html.HiddenFor(model => model.RaceKey)
+                    </div>
+                </div>
+                <div id="@Html.Encode("classresultdiv" + Model.RaceClassKey)" class="centeredresultdiv" >
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>

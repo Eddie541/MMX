@@ -1,0 +1,30 @@
+﻿@model MMXModelsLib.RaceClassModel
+@{
+    Layout = null;
+}
+<fieldset>
+    <legend>@Html.DisplayFor(model => model.ClassName)</legend>
+    <div>
+        @Html.HiddenFor(model => model.RaceClassKey)
+    </div>
+    <div class="display-label">
+        Minimum Age</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MinimumAge)
+    </div>
+    <div class="display-label">
+        Note</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Note)
+    </div>
+    <div>
+        @Html.Partial("RaceClassMemberList", Model.Members)
+    </div>
+</fieldset>
+<p>
+    @if (Model.ShowingAll) {
+        @Html.ActionLink("Back", "ShowAllRaceClasses")
+    } else {
+        @Html.ActionLink("Back", "RaceClassList")
+    }
+</p>

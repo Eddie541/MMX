@@ -1,0 +1,27 @@
+﻿@model MMXModelsLib.RaceClassDisplayListModel
+@{
+    Layout = null;
+}
+<div>
+    <div>
+        <h2>@Model.Year</h2>
+    </div>
+    <table>
+        <tr>
+            <th>
+                @if (Model.IsAdminRole) {
+                    @Html.ActionImage("AddUpdateRaceClass", new { raceClassKey = 0 }, "../../Content/images/plusGreen16.png", "Add")
+                }
+            </th>
+            <th>
+                Race Classes
+            </th>
+        </tr>
+        @for (int t = 0; t < Model.RaceClassDisplayModels.Count(); t++) {
+            Html.RenderPartial("RaceClass", Model.RaceClassDisplayModels[t], ViewData);
+        }
+    </table>
+    <div>
+        @Html.HiddenFor(model => model.IsAdminRole)
+    </div>
+</div>

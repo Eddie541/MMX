@@ -1,0 +1,124 @@
+﻿@model MMXModelsLib.MemberRaceResultEntryModel
+@using (@Ajax.BeginForm("AddUpdateRaceClassResult", "RaceResult", new { result = Model },
+    new AjaxOptions {
+        HttpMethod = "POST",
+        UpdateTargetId = "form" + Model.EntryRow,
+        InsertionMode = InsertionMode.Replace,
+        OnSuccess = "postSuccess"
+    })) {              
+    <div id="@Html.Encode("resultdiv" + Model.EntryRow)" style="border-width:thin; border-color:Gray; border-style:inset; border-radius:0.5em; margin:1em; padding:1em;" >
+        <span style="font-size: large; font-weight: bold;">@Html.DisplayFor(model => model.LastName),
+            @Html.DisplayFor(model => model.FirstName)</span>
+        <div style="display: inline-table;">
+            <div class="entryelementdiv;">
+                <div class="alignedentrydiv">
+                    <span>
+                        @Html.LabelFor(model => model.Brand)
+                        @if (Model.EntrySuccess) {
+                            @Html.DisplayFor(model => model.Brand, new { id = "branddisplay" + Model.EntryRow })                               
+                        } else {
+                            @Html.TextBoxFor(model => model.Brand, new { id = "brandeditor" + Model.EntryRow })
+                        }
+                    </span>
+                </div>
+            </div>
+            <div class="entryelementdiv;">
+                <div class="alignedentrydiv">
+                    <span>
+                        @Html.LabelFor(model => model.RidingNumber)
+                        @if (Model.EntrySuccess) {
+                            @Html.DisplayFor(model => model.RidingNumber, new { id = "ridingnumberdisplay" + Model.EntryRow })
+                        } else {
+                            @Html.TextBoxFor(model => model.RidingNumber, new { id = "ridingnumbereditor" + Model.EntryRow })
+                        }
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div style="display: inline-table;">
+            <div class="entryelementdiv;">
+                <div class="alignedentrydiv">
+                    <span>@Html.LabelFor(model => model.MotoOnePosition)
+                        @if (Model.EntrySuccess) {
+                            @Html.DisplayFor(model => model.MotoOnePosition, new { id = "motoonepositiondisplay" + Model.EntryRow })
+                        } else {
+                            @Html.TextBoxFor(model => model.MotoOnePosition, new { id = "motoonepositioneditor" + Model.EntryRow })
+                        }
+                    </span>
+                </div>
+            </div>
+            <div class="entryelementdiv;">
+                <div class="alignedentrydiv">
+                    @if (Model.EntrySuccess) {
+                        @Html.DisplayFor(model => model.StatusMotoOne, new { id = "statusonedisplay" + Model.EntryRow })
+                    } else {
+                        @Html.DropDownListFor(model => model.StatusMotoOne, new SelectList(Model.FinishSelections, "Finish", "Finish"))
+                    }
+                </div>
+            </div>
+        </div>
+        <div style="display: inline-table;">
+            <div class="entryelementdiv;">
+                <div class="alignedentrydiv">
+                    <span>@Html.LabelFor(model => model.MotoTwoPosition)
+                        @if (Model.EntrySuccess) {
+                            @Html.DisplayFor(model => model.MotoTwoPosition, new { id = "mototwopositiondisplay" + Model.EntryRow })
+                        } else {
+                            @Html.TextBoxFor(model => model.MotoTwoPosition, new { id = "mototwopositioneditor" + Model.EntryRow })
+                        }
+                    </span>
+                </div>
+            </div>
+            <div class="entryelementdiv;">
+                <div class="alignedentrydiv">
+                    @if (Model.EntrySuccess) {
+                        @Html.DisplayFor(model => model.StatusMotoTwo, new { id = "statusmototwodisplay" + Model.EntryRow })
+                    } else {
+                        @Html.DropDownListFor(model => model.StatusMotoTwo, new SelectList(Model.FinishSelections, "Finish", "Finish"))
+                    }
+                </div>
+            </div>
+        </div>
+        <div style="display: inline-table;">
+            <div class="entryelementdiv;">
+                <div class="alignedentrydiv">
+                    <span>@Html.LabelFor(model => model.Overall)
+                        @if (Model.EntrySuccess) {
+                            @Html.DisplayFor(model => model.Overall, new { id = "overalldisplay" + Model.EntryRow })
+                        } else {
+                            @Html.TextBoxFor(model => model.Overall, new { id = "overalleditor" + Model.EntryRow })
+                        }
+                    </span>
+                </div>
+            </div>
+            <div class="entryelementdiv;">
+                <div class="alignedentrydiv">
+                    <span>@Html.LabelFor(model => model.Note)
+                        @if (Model.EntrySuccess) {
+                            @Html.DisplayFor(model => model.Note, new { id = "notedisplay" + Model.EntryRow })
+                        } else {
+                            @Html.TextAreaFor(model => model.Note, new { id = "noteeditor" + Model.EntryRow })                            
+                        }
+                    </span>
+                </div>
+            </div>
+            @Html.HiddenFor(model => model.RaceKey)
+            @Html.HiddenFor(model => model.RaceClassKey)
+            @Html.HiddenFor(model => model.RaceResultKey)
+            @Html.HiddenFor(model => model.RaceClassMemberKey)
+            @Html.HiddenFor(model => model.FirstName)
+            @Html.HiddenFor(model => model.LastName)
+        </div>
+        <div>
+            @Html.Partial("ErrorMessage", Model.Errors)
+        </div>
+        <p>
+            @if (Model.EntrySuccess) {
+                <input type="button" value="Update" id="@Html.Encode("up" + Model.EntryRow)" class="e-clicked" onclick="alert('update'); return false;" />
+            } else {
+                <input type="submit" value="Save" id="@Html.Encode("sa" + Model.EntryRow)" class="e-clicked" />
+            }
+        </p>
+    </div>
+    
+}

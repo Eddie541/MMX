@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D726276A-F373-456A-95E4-AD576AB8D95D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MMXModelsLib</RootNamespace>
+    <AssemblyName>MMXModelsLib</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountModels.cs" />
+    <Compile Include="AddressModel.cs" />
+    <Compile Include="AdminModels.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="EnrollmentModel.cs" />
+    <Compile Include="ErrorMessageModel.cs" />
+    <Compile Include="MemberDisplayModel.cs" />
+    <Compile Include="MemberModel.cs" />
+    <Compile Include="MemberRaceResultEntryModel.cs" />
+    <Compile Include="MotorcycleModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RaceClassDisplayModel.cs" />
+    <Compile Include="RaceClassMemberResultModel.cs" />
+    <Compile Include="RaceClassModel.cs" />
+    <Compile Include="RaceClassMemberModel.cs" />
+    <Compile Include="RaceClassDisplayListModel.cs" />
+    <Compile Include="RaceClassResultEntryModel.cs" />
+    <Compile Include="RaceClassSignUpModel.cs" />
+    <Compile Include="RaceModel.cs" />
+    <Compile Include="RaceResultEntryModel.cs" />
+    <Compile Include="RaceSelectorModel.cs" />
+    <Compile Include="RaceResultViewModel.cs" />
+    <Compile Include="ProcessRaceResultsModel.cs" />
+    <Compile Include="RaceYearResultModel.cs" />
+    <Compile Include="SelectedRaceUploadModel.cs" />
+    <Compile Include="SelectRaceResultUploadModel.cs" />
+    <Compile Include="SuperUserDashboardModel.cs" />
+    <Compile Include="YearSelectorModel.cs" />
+    <Compile Include="RaceScheduleModel.cs" />
+    <Compile Include="RoleModel.cs" />
+    <Compile Include="TrackModel.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

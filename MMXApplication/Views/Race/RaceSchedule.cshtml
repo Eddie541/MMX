@@ -1,0 +1,20 @@
+﻿@model MMXModelsLib.RaceScheduleModel
+@{
+    Layout = null;
+}
+<div>
+    <h2>@Model.Year Schedule</h2>
+</div>
+
+<div>
+@using (Html.BeginForm("RaceSchedule", "Race", FormMethod.Post)) { 
+        @Html.Partial("YearSelector", Model.YearSelector)
+}
+</div>
+
+<div>
+    @Html.Partial("RaceList", Model.Races, this.ViewData)
+</div>
+<div>
+    @Html.Partial("TrackList", Model.Tracks, this.ViewData)
+</div>

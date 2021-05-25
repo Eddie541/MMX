@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMXApplication", "MMXApplication\MMXApplication.csproj", "{59FA336F-4F65-4766-A148-889D52DBF9EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESS.UtilitiesLib", "..\MMXMvc2Application\ESS.UtilitiesLib\ESS.UtilitiesLib.csproj", "{DA1A0008-C8FB-4384-AF2C-32F4D83BD093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMXDataLib", "MMXDataLib\MMXDataLib.csproj", "{9C5487DD-813C-41AF-BC4E-BA10CE36D163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMXDataService", "MMXDataService\MMXDataService.csproj", "{A90175C2-422F-408B-941C-93FD75480B5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMXModelsLib", "MMXModelsLib\MMXModelsLib.csproj", "{D726276A-F373-456A-95E4-AD576AB8D95D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MMXServiceInterfaceLib", "MMXServiceInterfaceLib\MMXServiceInterfaceLib.csproj", "{A059D983-667B-4EC5-A5A7-A375368F0C98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zMMXUnitTest", "zMMXUnitTest\zMMXUnitTest.csproj", "{2D8BDD48-52CF-4BFA-BEF1-8F892599AE7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E313CB5D-7849-434D-80FC-31129E5DA11A}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		MMXApplication.vsmdi = MMXApplication.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = MMXApplication.vsmdi
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 8
+		SccProjectName0 = \u0022$/MMXApplication.root/MMXApplication\u0022,\u0020XVBAAAAA
+		SccLocalPath0 = ..
+		SccProvider0 = MSSCCI:Microsoft\u0020Visual\u0020SourceSafe
+		SccProjectFilePathRelativizedFromConnection0 = MMXApplication\\
+		SccProjectUniqueName1 = MMXApplication\\MMXApplication.csproj
+		SccLocalPath1 = ..
+		SccProjectFilePathRelativizedFromConnection1 = MMXApplication\\MMXApplication\\
+		SccProjectUniqueName2 = MMXDataLib\\MMXDataLib.csproj
+		SccLocalPath2 = ..
+		SccProjectFilePathRelativizedFromConnection2 = MMXApplication\\MMXDataLib\\
+		SccProjectUniqueName3 = MMXDataService\\MMXDataService.csproj
+		SccLocalPath3 = ..
+		SccProjectFilePathRelativizedFromConnection3 = MMXApplication\\MMXDataService\\
+		SccProjectUniqueName4 = MMXModelsLib\\MMXModelsLib.csproj
+		SccLocalPath4 = ..
+		SccProjectFilePathRelativizedFromConnection4 = MMXApplication\\MMXModelsLib\\
+		SccProjectUniqueName5 = MMXServiceInterfaceLib\\MMXServiceInterfaceLib.csproj
+		SccLocalPath5 = ..
+		SccProjectFilePathRelativizedFromConnection5 = MMXApplication\\MMXServiceInterfaceLib\\
+		SccProjectUniqueName6 = ..\\MMXMvc2Application\\ESS.UtilitiesLib\\ESS.UtilitiesLib.csproj
+		SccLocalPath6 = ..
+		SccProjectFilePathRelativizedFromConnection6 = MMXMvc2Application\\ESS.UtilitiesLib\\
+		SccProjectUniqueName7 = zMMXUnitTest\\zMMXUnitTest.csproj
+		SccLocalPath7 = ..
+		SccProjectFilePathRelativizedFromConnection7 = MMXApplication\\zMMXUnitTest\\
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59FA336F-4F65-4766-A148-889D52DBF9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59FA336F-4F65-4766-A148-889D52DBF9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59FA336F-4F65-4766-A148-889D52DBF9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59FA336F-4F65-4766-A148-889D52DBF9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA1A0008-C8FB-4384-AF2C-32F4D83BD093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA1A0008-C8FB-4384-AF2C-32F4D83BD093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA1A0008-C8FB-4384-AF2C-32F4D83BD093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA1A0008-C8FB-4384-AF2C-32F4D83BD093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C5487DD-813C-41AF-BC4E-BA10CE36D163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C5487DD-813C-41AF-BC4E-BA10CE36D163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C5487DD-813C-41AF-BC4E-BA10CE36D163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C5487DD-813C-41AF-BC4E-BA10CE36D163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A90175C2-422F-408B-941C-93FD75480B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A90175C2-422F-408B-941C-93FD75480B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A90175C2-422F-408B-941C-93FD75480B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A90175C2-422F-408B-941C-93FD75480B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D726276A-F373-456A-95E4-AD576AB8D95D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D726276A-F373-456A-95E4-AD576AB8D95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D726276A-F373-456A-95E4-AD576AB8D95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D726276A-F373-456A-95E4-AD576AB8D95D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A059D983-667B-4EC5-A5A7-A375368F0C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A059D983-667B-4EC5-A5A7-A375368F0C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A059D983-667B-4EC5-A5A7-A375368F0C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A059D983-667B-4EC5-A5A7-A375368F0C98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D8BDD48-52CF-4BFA-BEF1-8F892599AE7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D8BDD48-52CF-4BFA-BEF1-8F892599AE7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D8BDD48-52CF-4BFA-BEF1-8F892599AE7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D8BDD48-52CF-4BFA-BEF1-8F892599AE7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

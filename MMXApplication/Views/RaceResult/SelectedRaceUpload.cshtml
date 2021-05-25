@@ -1,0 +1,30 @@
+﻿@model MMXModelsLib.SelectedRaceUploadModel
+@using (Ajax.BeginForm("UploadResultFile", "RaceResult",
+    new { worksheetName = Model.WorksheetName, raceKey = Model.RaceKey, year = Model.CurrentYear },
+    new AjaxOptions () {
+        HttpMethod = "POST",
+        OnBegin = "beginUpload(" + Model.WorksheetName + ")",
+        OnSuccess = "uploadSucess()"      
+    },
+     new { @id = "uploadForm", @enctype = "multipart/form-data" })) {
+
+    <div>
+        <div>
+            <span>Upload Year: <span>@Html.TextBoxFor(m => m.CurrentYear, new { @readonly = true })</span></span>
+        </div>
+        <div>
+            <span>Upload Race: <span>@Html.DisplayFor(m => m.SelectedRace)</span></span>
+            @Html.HiddenFor(m => m.RaceKey)
+        </div>
+        <div class="entryelementdiv;">
+            <div class="alignedentrydiv">
+                @Html.LabelFor(model => model.WorksheetName, "Worksheet")
+                @Html.TextBoxFor(model => model.WorksheetName)
+            </div>
+        </div>
+    </div>
+    <div>
+        <input id="uploadFile" name="uploadFile" type="file" /><br />
+        <input id="subButton" type="submit" value="UploadFile" title="Upload File" />
+    </div>
+}

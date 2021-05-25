@@ -1,0 +1,43 @@
+﻿@model IEnumerable<MMXModelsLib.TrackModel>
+<table>
+    <tr>
+        <th>
+            @if ((bool)ViewData["IsAdmin"]) { 
+                @Html.ActionLink("Create New", "AddUpdateTrack", new { trackKey = 0 })
+            }
+        </th>
+        <th>
+            Track
+        </th>
+        <th>
+            City
+        </th>
+        <th>
+            State
+        </th>
+    </tr>
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @if ((bool)ViewData["IsAdmin"]) { 
+                    @Html.ActionLink("Update", "AddUpdateTrack", new { trackKey = item.TrackKey }) 
+                    @Html.DisplayText("|") 
+                }
+                @Html.ActionLink("Details", "GetTrackDetails", new { trackKey = item.TrackKey })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrackName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address.State)
+            </td>
+            <td>
+                @Html.HiddenFor(modelItem => item.AddressKey)
+                @Html.HiddenFor(modelItem => item.TrackKey)
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,33 @@
+﻿@model MMXModelsLib.RaceClassDisplayModel
+<tr id="@Html.Encode("classrow" + Model.RaceClassKey)">
+    <td>
+        <div>
+            <div style="display: inline-table;">
+                <div class="alignedentrydiv">
+                    <div class="alignedentrydiv">
+                        @{var classKey = Model.RaceClassKey;}
+                        @Ajax.ImageActionLink("../../Content/images/mmxOpen16.png", "Get Class Members", "GetRaceClassMembers", new { raceClassKey = Model.RaceClassKey },
+                    new AjaxOptions() {
+                        HttpMethod = "GET",
+                        UpdateTargetId = "classmemberresultdiv" + Model.RaceClassKey,
+                        InsertionMode = InsertionMode.Replace,
+                        OnSuccess = "postSuccess('" + classKey + "', 'classMemberResultLink', 'closeClassMembers', 'classrow')"
+                    }, new { @id = "classMemberResultLink" + Model.RaceClassKey })
+                        <input class="closebuttons" id="@Html.Encode("closeClassMembers" + Model.RaceClassKey)" type="image" 
+                        alt="Close" src="../../Content/images/mmxClose16.png" 
+                        onclick="closeDisplayDiv('@Model.RaceClassKey', 'classmemberresultdiv', 'classMemberResultLink', 'closeClassMembers');" style="display:none;" />
+                        @if ((bool)ViewData["IsAdmin"]) {
+                            @Html.ActionImage("AddUpdateRaceClass", new { raceClassKey = Model.RaceClassKey }, "../../Content/images/unblocked16.png", "Update")
+                        }
+                        @Html.DisplayFor(model => model.ClassName)
+                        @Html.DisplayFor(model => model.Note)
+                        @Html.DisplayFor(model => model.Enabled)
+                        @Html.HiddenFor(model => model.RaceClassKey)
+                    </div>
+                </div>
+                <div id="@Html.Encode("classmemberresultdiv" + Model.RaceClassKey)">
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>

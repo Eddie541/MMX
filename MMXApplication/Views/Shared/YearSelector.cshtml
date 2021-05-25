@@ -1,0 +1,10 @@
+﻿@model MMXModelsLib.YearSelectorModel
+<div>
+    <span>
+       <text>Select Another Year:</text>
+        @if (Model.Years != null) {
+            @Html.DropDownListFor(m => m.CurrentYear, new SelectList(Model.Years, "CurrentYear", "CurrentYear"))
+        }
+        <input type="submit" value="Go" />
+    </span>
+</div>

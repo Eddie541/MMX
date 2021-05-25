@@ -1,0 +1,7 @@
+﻿@model IEnumerable<MMXModelsLib.ErrorMessageModel>
+@foreach (var item in Model) {   
+    <div class="display-field">
+        @Html.DisplayFor(modelItem => item.ErrorMessage, new { @class = "errorformat" })
+    </div>
+}
+

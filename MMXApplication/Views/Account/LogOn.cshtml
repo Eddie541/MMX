@@ -1,0 +1,43 @@
+﻿@model MMXModelsLib.LogOnModel
+@*<div id="emailNotifyDiv" style="background-color: #F5F5F5; text-align: center; vertical-align: middle;">
+        <p id="emailNoticeP" style="color: Blue; font-weight: bold;"></p>
+ </div>*@
+@using (Html.BeginForm()) {
+    <div id="logondiv">
+        @Html.ValidationSummary(true)       
+            <div class="editor-label">
+                @Html.LabelFor(model => model.UserEmail)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.UserEmail, new { style = "Min-Width:250px;" })
+                @Html.ValidationMessageFor(model => model.UserEmail)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="editor-field">
+                @Html.PasswordFor(model => model.Password, new { style = "Min-Width:250px;" })
+                @Html.ValidationMessageFor(model => model.Password)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.RememberMe)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.RememberMe)
+                @Html.ValidationMessageFor(model => model.RememberMe)
+            </div>
+            <p>
+                <input type="submit" value="Log In" />
+            </p>
+            @* <div>
+            <span style="font-weight: bold;">New User?</span><span>@Html.ActionLink("Register", "Register")</span>
+        </div>*@
+            <div style="padding: 3px;">
+                @*            @Html.ActionLink("Forgot Password", "ResetPassword")
+*@
+                @Html.HiddenFor(m => m.ShowEmailSentNotice)
+                @Html.HiddenFor(m => m.EmailSentNotice)
+            </div>
+        
+    </div>
+}
